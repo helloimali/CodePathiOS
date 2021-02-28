@@ -100,7 +100,6 @@
 		03799ED525E1D5190064035B = {
 			isa = PBXGroup;
 			children = (
-				03EDBE5825EB51A900F30B42 /* MovieGridViewController.swift */,
 				03799EE025E1D5190064035B /* flixter */,
 				03799EF725E1D51C0064035B /* flixterTests */,
 				03799F0225E1D51C0064035B /* flixterUITests */,
@@ -123,6 +122,7 @@
 		03799EE025E1D5190064035B /* flixter */ = {
 			isa = PBXGroup;
 			children = (
+				03EDBE5825EB51A900F30B42 /* MovieGridViewController.swift */,
 				03799EEC25E1D51C0064035B /* LaunchScreen.storyboard */,
 				03799EE125E1D5190064035B /* AppDelegate.swift */,
 				03799EE325E1D5190064035B /* SceneDelegate.swift */,
