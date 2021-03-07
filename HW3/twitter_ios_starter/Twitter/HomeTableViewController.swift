@@ -9,15 +9,37 @@
 import UIKit
 
 class HomeTableViewController: UITableViewController {
+    
+    // Array of dictionaries
+    var tweetArray = [NSDictionary]()
+    var numOfTweets: Int!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadTweets()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    
+    func loadTweets(){
+        let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        let myParams = ["count": 10]
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: myURL, parameters: myParams, success: { (tweets: [NSDictionary]) in
+            self.tweetArray.removeAll()
+            for tweet in tweets{
+                self.tweetArray.append(tweet)
+            }
+            self.tableView.reloadData()
+        }, failure: { (Error) in
+            print("Could not get tweets")
+        })
     }
 
     @IBAction func onLogout(_ sender: Any) {
@@ -31,7 +53,7 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetTableViewCell
         
         cell.userNameLbl.text = "Ali Malik"
-        cell.tweetContent.text = "This is a tweet"
+        cell.tweetContent.text = tweetArray[indexPath.row]["text"] as! String
         
         return cell
     }
@@ -48,7 +70,7 @@ class HomeTableViewController: UITableViewController {
     // How many rows we get
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return tweetArray.count
         //Depends on how many tweets we get
     }
 
