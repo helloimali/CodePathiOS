@@ -20,7 +20,15 @@ class LoginViewController: UIViewController {
         //This will run when someone clicks the button
         //Action, not an outlet
         //print("ECHO")
-        
+        let myURL = "https://api.twitter.com/oauth/request_token"
+        // Try This URL
+        // If login successful, do this
+        // otherwise, do this
+        TwitterAPICaller.client?.login(url: myURL, success: {
+            self.performSegue(withIdentifier: "loginToHome", sender: self)
+        }, failure: { (Error) in
+            print("Could not login")
+        })
     }
     
     /*
