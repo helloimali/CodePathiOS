@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="108" id="Miy-Hp-hme">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="108" id="Miy-Hp-hme" customClass="TweetTableViewCell" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Miy-Hp-hme" id="ApZ-zl-oOs">
@@ -95,6 +95,11 @@
                                         <constraint firstItem="D4B-N4-idx" firstAttribute="leading" secondItem="hDl-fP-1Oy" secondAttribute="trailing" constant="8" id="zlZ-cB-SOW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profilePic" destination="hDl-fP-1Oy" id="iub-4y-9Jh"/>
+                                    <outlet property="tweetContent" destination="D4B-N4-idx" id="P6S-lW-p9y"/>
+                                    <outlet property="userNameLbl" destination="YyI-BG-k9g" id="6Ad-QF-YDx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
