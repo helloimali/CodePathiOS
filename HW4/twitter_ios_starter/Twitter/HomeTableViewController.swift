@@ -24,6 +24,8 @@ class HomeTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
     }
     
     // Everytime view appears
@@ -70,6 +72,9 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data{
             cell.profilePic.image = UIImage(data: imageData)
         }
+        
+        // 
+        cell.setFavorited(tweetArray[indexPath.row]["favorited"] as! Bool)
         
         return cell
     }
