@@ -131,12 +131,15 @@
             <objects>
                 <viewController id="Lle-PB-yLa" customClass="TweetViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4s-3K-Yac">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lw1-t5-v3S">
-                                <rect key="frame" x="0.0" y="70" width="375" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lw1-t5-v3S">
+                                <rect key="frame" x="0.0" y="44" width="375" height="142"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="E1t-7T-luM"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -145,9 +148,9 @@
                         <viewLayoutGuide key="safeArea" id="81T-cq-0x7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Lw1-t5-v3S" firstAttribute="top" secondItem="81T-cq-0x7" secondAttribute="top" id="1RZ-SP-Cqh"/>
-                            <constraint firstItem="81T-cq-0x7" firstAttribute="trailing" secondItem="Lw1-t5-v3S" secondAttribute="trailing" id="aZX-2o-N0Z"/>
-                            <constraint firstItem="Lw1-t5-v3S" firstAttribute="leading" secondItem="81T-cq-0x7" secondAttribute="leading" id="t9l-W0-cf4"/>
+                            <constraint firstItem="Lw1-t5-v3S" firstAttribute="leading" secondItem="81T-cq-0x7" secondAttribute="leading" id="Tlr-qg-mgs"/>
+                            <constraint firstItem="Lw1-t5-v3S" firstAttribute="top" secondItem="81T-cq-0x7" secondAttribute="top" id="fIU-bh-coV"/>
+                            <constraint firstItem="Lw1-t5-v3S" firstAttribute="trailing" secondItem="81T-cq-0x7" secondAttribute="trailing" id="kmI-p9-c7k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Myp-1B-My7">
@@ -164,6 +167,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tweetTextView" destination="Lw1-t5-v3S" id="Bws-uk-xd8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3A-i4-qR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,10 +202,10 @@
         <!--Tweet Navigation Controller-->
         <scene sceneID="0gW-pr-aVV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HJl-h6-NAo" userLabel="Tweet Navigation Controller" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="HJl-h6-NAo" userLabel="Tweet Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="joZ-EW-6ZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.098403416729999998" green="1" blue="0.97424965139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
