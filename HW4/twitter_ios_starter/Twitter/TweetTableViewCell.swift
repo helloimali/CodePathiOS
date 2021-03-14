@@ -18,6 +18,8 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var favButton: UIButton!
     
     var favorited:Bool = false
+    var tweetID:Int = -1
+    
     func setFavorited(_ isFav:Bool){
         favorited = isFav
         if (isFav){
@@ -28,6 +30,20 @@ class TweetTableViewCell: UITableViewCell {
     }
     
     @IBAction func favTweet(_ sender: Any) {
+        let tobeFav = !favorited
+        if(tobeFav){
+            TwitterAPICaller.client?.favoriteTweet(tweetID: tweetID, success: {
+                self.setFavorited(true)
+            }, failure: { (error) in
+                print("Fav did not work\(error)")
+            })
+        } else{
+            TwitterAPICaller.client?.unfavoriteTweet(tweetID: tweetID, success: {
+                self.setFavorited(false)
+            }, failure: { (error) in
+                print("unFav did not work\(error)")
+            })
+        }
         
     }
     @IBAction func retweet(_ sender: Any) {

@@ -73,9 +73,9 @@ class HomeTableViewController: UITableViewController {
             cell.profilePic.image = UIImage(data: imageData)
         }
         
-        // 
+        //
         cell.setFavorited(tweetArray[indexPath.row]["favorited"] as! Bool)
-        
+        cell.tweetID = tweetArray[indexPath.row]["id"] as! Int
         return cell
     }
     
