@@ -8,9 +8,12 @@
 import UIKit
 import Parse
 import AlamofireImage
+import MessageInputBar
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tblView: UITableView!
+    let commentBar = MessageInputBar()
+    
     var posts = [PFObject]()
     
     override func viewDidLoad() {
@@ -22,6 +25,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        print("CELL PRINT2")
         // Do any additional setup after loading the view.
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -116,6 +120,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
               let delegate = windowScene.delegate as? SceneDelegate else {return}
         delegate.window?.rootViewController = loginViewController
     }
+    
+    
+    //MESSAGE BAR
+    override var inputAccessoryView: UIView?{
+        return commentBar
+    }
+    
+    override var canBecomeFirstResponder: Bool{
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
