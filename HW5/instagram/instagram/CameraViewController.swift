@@ -30,8 +30,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         //Support binary ojects like photos
         let imgData = imgView.image!.pngData()
-        let file = PFFileObject(data: imgData!)
-        
+        let file = PFFileObject(name: "image.png", data: imgData!)
         post["img"] = file
         
         post.saveInBackground { (succ, err) in
