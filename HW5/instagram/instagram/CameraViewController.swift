@@ -20,7 +20,28 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     @IBAction func onSubmitBtn(_ sender: Any) {
         
+        // Parse will create it table on the fly
+        let post = PFObject(className: "post")
+        //Pet is a dictionary
         
+        //Adding Key = Value pairs
+        post["caption"] = commentField.text!
+        post["author"] = PFUser.current()!
+        
+        //Support binary ojects like photos
+        let imgData = imgView.image!.pngData()
+        let file = PFFileObject(data: imgData!)
+        
+        post["img"] = file
+        
+        post.saveInBackground { (succ, err) in
+            if succ{
+                self.dismiss(animated: true, completion: nil)
+                print("Saved!!")
+            }else{
+                print("ERROR")
+            }
+        }
     }
     
     @IBAction func onCamBtn(_ sender: Any) {
