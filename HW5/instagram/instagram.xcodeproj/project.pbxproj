@@ -16,6 +16,7 @@
 		031004742613267D00C9E907 /* instagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004732613267D00C9E907 /* instagramUITests.swift */; };
 		031004912613295F00C9E907 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004902613295F00C9E907 /* LoginViewController.swift */; };
 		031004962613296F00C9E907 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004952613296F00C9E907 /* FeedViewController.swift */; };
+		031004A2261339DC00C9E907 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004A1261339DC00C9E907 /* CameraViewController.swift */; };
 		6308EE42BDD1A9274BF4C01D /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002E5DA0B564C8A72DDADCFC /* Pods_instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		031004752613267D00C9E907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031004902613295F00C9E907 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		031004952613296F00C9E907 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		031004A1261339DC00C9E907 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B00A4D321ADEF972CE2A1659 /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			children = (
 				031004512613267A00C9E907 /* AppDelegate.swift */,
 				031004532613267A00C9E907 /* SceneDelegate.swift */,
+				031004A1261339DC00C9E907 /* CameraViewController.swift */,
 				031004572613267A00C9E907 /* Main.storyboard */,
 				031004902613295F00C9E907 /* LoginViewController.swift */,
 				031004952613296F00C9E907 /* FeedViewController.swift */,
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				031004912613295F00C9E907 /* LoginViewController.swift in Sources */,
+				031004A2261339DC00C9E907 /* CameraViewController.swift in Sources */,
 				031004522613267A00C9E907 /* AppDelegate.swift in Sources */,
 				031004962613296F00C9E907 /* FeedViewController.swift in Sources */,
 				031004542613267A00C9E907 /* SceneDelegate.swift in Sources */,
