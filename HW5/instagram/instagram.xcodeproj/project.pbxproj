@@ -18,6 +18,7 @@
 		031004962613296F00C9E907 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004952613296F00C9E907 /* FeedViewController.swift */; };
 		031004A2261339DC00C9E907 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004A1261339DC00C9E907 /* CameraViewController.swift */; };
 		031004B42613458200C9E907 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004B32613458200C9E907 /* PostTableViewCell.swift */; };
+		031004B92613D31400C9E907 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031004B82613D31400C9E907 /* CommentTableViewCell.swift */; };
 		6308EE42BDD1A9274BF4C01D /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002E5DA0B564C8A72DDADCFC /* Pods_instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		031004952613296F00C9E907 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		031004A1261339DC00C9E907 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		031004B32613458200C9E907 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		031004B82613D31400C9E907 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		B00A4D321ADEF972CE2A1659 /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				031004A1261339DC00C9E907 /* CameraViewController.swift */,
 				031004B32613458200C9E907 /* PostTableViewCell.swift */,
 				031004572613267A00C9E907 /* Main.storyboard */,
+				031004B82613D31400C9E907 /* CommentTableViewCell.swift */,
 				031004902613295F00C9E907 /* LoginViewController.swift */,
 				031004952613296F00C9E907 /* FeedViewController.swift */,
 				0310045A2613267C00C9E907 /* Assets.xcassets */,
@@ -339,6 +342,7 @@
 				031004A2261339DC00C9E907 /* CameraViewController.swift in Sources */,
 				031004522613267A00C9E907 /* AppDelegate.swift in Sources */,
 				031004962613296F00C9E907 /* FeedViewController.swift in Sources */,
+				031004B92613D31400C9E907 /* CommentTableViewCell.swift in Sources */,
 				031004542613267A00C9E907 /* SceneDelegate.swift in Sources */,
 				031004B42613458200C9E907 /* PostTableViewCell.swift in Sources */,
 			);

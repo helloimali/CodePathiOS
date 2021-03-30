@@ -152,6 +152,41 @@
                                             <outlet property="userNameLbl" destination="zZz-Bn-iUe" id="Vjs-cd-VVm"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="Ens-7D-u65" customClass="CommentTableViewCell" customModule="instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="421" width="414" height="37.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ens-7D-u65" id="Lr0-fA-9JY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia6-7u-siq">
+                                                    <rect key="frame" x="16" y="8" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment section" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5r-WB-CfU">
+                                                    <rect key="frame" x="69" y="8" width="135" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t5r-WB-CfU" secondAttribute="trailing" constant="8" id="3ef-4b-v8y"/>
+                                                <constraint firstItem="t5r-WB-CfU" firstAttribute="leading" secondItem="ia6-7u-siq" secondAttribute="trailing" constant="8" id="G0X-jS-582"/>
+                                                <constraint firstItem="ia6-7u-siq" firstAttribute="leading" secondItem="Lr0-fA-9JY" secondAttribute="leading" constant="16" id="kPC-l9-5MT"/>
+                                                <constraint firstItem="t5r-WB-CfU" firstAttribute="top" secondItem="Lr0-fA-9JY" secondAttribute="top" constant="8" id="qLU-Ro-zSo"/>
+                                                <constraint firstItem="ia6-7u-siq" firstAttribute="top" secondItem="Lr0-fA-9JY" secondAttribute="top" constant="8" id="tpV-vu-FqW"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ia6-7u-siq" secondAttribute="bottom" constant="8" id="tt5-Bq-BpN"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="t5r-WB-CfU" secondAttribute="bottom" constant="8" id="ttj-kL-akk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLbl" destination="t5r-WB-CfU" id="e9V-HF-aE3"/>
+                                            <outlet property="name" destination="ia6-7u-siq" id="k4T-05-3aB"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
