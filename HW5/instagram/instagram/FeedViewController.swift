@@ -10,23 +10,50 @@ import Parse
 import AlamofireImage
 import MessageInputBar
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate{
     @IBOutlet weak var tblView: UITableView!
     let commentBar = MessageInputBar()
-    
+    var showCommentBar = false
     var posts = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentBar.inputTextView.placeholder = "Add a comment... "
+        commentBar.sendButton.title = "Post"
+        commentBar.delegate = self
 
         tblView.delegate = self
         tblView.dataSource = self
+        
+        // Keyboard dismiss via swime down
+        tblView.keyboardDismissMode = .interactive
+        
+        //Grab the notification --> I want to observe event
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardWillBeHidden(node:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
 //        print("CELL PRINT2")
         // Do any additional setup after loading the view.
     }
     
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        //Create the comment
+        
+        // Clear and dismiss the input
+        commentBar.inputTextView.text = nil
+        showCommentBar = false
+        becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
+    }
     
+    @objc func keyboardWillBeHidden(node: Notification){
+        commentBar.inputTextView.text = nil
+        showCommentBar = false
+        becomeFirstResponder()
+        // Raise keyboard
+        commentBar.inputTextView.becomeFirstResponder()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -55,7 +82,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Meaning, if it's nill, set it to []
         let comments = (post["comments"] as? [PFObject]) ?? []
         
-        return comments.count+1
+        return comments.count+2
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
@@ -82,7 +109,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             cell.photoView.af_setImage(withURL: url)
             return cell
-        }else{
+        }else if indexPath.row <= comments.count{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentTableViewCell
             let comment = comments[indexPath.row - 1]
             cell.commentLbl.text = comment["text"] as! String
@@ -91,24 +118,39 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.name.text = user.username
             
             return cell
+        }else{
+            // No custom cell because not dynamically modifying it
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+            return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.section]
-        let comment = PFObject(className: "Comments")
-        comment["text"] = "This is a random comment"
-        comment["post"] = post
-        comment["author"] = PFUser.current()!
-        
-        post.add(comment, forKey: "comments")
-        post.saveInBackground { (suc, err) in
-            if suc{
-                print("Comment Saved")
-            }else{
-                print("Error saving comment")
-            }
+        let comments = (post["comments"] as? [PFObject]) ?? []
+        if indexPath.row == comments.count+1{
+            //show comment bar
+            showCommentBar = true
+            becomeFirstResponder()
+            // Raise keyboard
+            commentBar.inputTextView.becomeFirstResponder()
+            
+            // First responder is like focus
         }
+        
+        //let comment = PFObject(className: "Comments")
+//        comment["text"] = "This is a random comment"
+//        comment["post"] = post
+//        comment["author"] = PFUser.current()!
+//
+//        post.add(comment, forKey: "comments")
+//        post.saveInBackground { (suc, err) in
+//            if suc{
+//                print("Comment Saved")
+//            }else{
+//                print("Error saving comment")
+//            }
+//        }
     }
     
     
@@ -128,7 +170,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override var canBecomeFirstResponder: Bool{
-        return true
+        return showCommentBar
     }
     
     /*
